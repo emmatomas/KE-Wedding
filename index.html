@@ -20,13 +20,6 @@
       color: white;
       position: relative;
     }
-    header svg {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 60px;
-      height: 60px;
-    }
     h1 {
       margin: 0;
       font-size: 2.5rem;
@@ -49,19 +42,30 @@
     }
     .location-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
     .location-text {
-      flex: 1;
-      min-width: 250px;
       text-align: left;
     }
+    .photo-placeholder {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      background-color: #e0e0e0;
+      border-radius: 12px;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-style: italic;
+    }
     .map iframe {
-      width: 350px;
-      height: 250px;
+      width: 100%;
+      max-width: 350px;
+      height: 200px;
       border: none;
       border-radius: 12px;
     }
@@ -96,6 +100,10 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+    .olive-branch {
+      margin: 1rem auto;
+      max-width: 120px;
+    }
   </style>
 </head>
 <body>
@@ -103,27 +111,32 @@
     <h1>Konstantinos & Emmanouela</h1>
     <p>Save the date</p>
     <p>Κυριακή 31 Μαΐου 2026</p>
-    <p>⏳</p>
+
+    <!-- Κλεψύδρα + Μέρες -->
     <div id="countdown" class="countdown"></div>
 
-    <!-- Εικονίδιο ελιάς (SVG) -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
-      <path d="M12 2C9.243 2 6 5.243 6 9c0 1.657.672 3.157 1.757 4.243L12 18l4.243-4.757A5.978 5.978 0 0 0 18 9c0-3.757-3.243-7-6-7zm0 2c2.206 0 4 2.019 4 5 0 .97-.363 1.843-.929 2.464L12 15.586l-3.071-4.122A3.481 3.481 0 0 1 8 9c0-2.981 1.794-5 4-5z"/>
-    </svg>
+    <!-- Νέο SVG: Πιο φυσικό κλαδί ελιάς -->
+    <div class="olive-branch">
+      <img src="https://cdn.pixabay.com/photo/2020/10/12/10/54/olive-branch-5648000_960_720.png" alt="Κλαδί Ελιάς" style="width:100%;">
+    </div>
   </header>
 
   <section>
     <h2>Τοποθεσία</h2>
     <div class="location-container">
+      <div class="photo-placeholder">
+        [Χώρος για φωτογραφία τοποθεσίας]
+      </div>
       <div class="location-text">
         <p>Η τελετή θα γίνει στην Εκκλησία Παναγίας, Ιεράπετρα Κρήτης</p>
         <p>Η δεξίωση θα ακολουθήσει στην Ταβέρνα Αγίας Παρασκευή, Χριστός</p>
       </div>
       <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.9568545632983!2d25.5736866750319!3d35.08281076261607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a814e5a4f263f%3A0x418b31a006f78916!2zzqTOsc6yzq3Pgc69zrEgzpHOs86vzrHPgiDOoM6xz4HOsc-DzrrOtc-Fzq7Pgg!5e0!3m2!1sel!2sgr!4v1756810724020!5m2!1sel!2sgr" 
-          allowfullscreen="" 
+          allowfullscreen 
           loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </section>
@@ -160,11 +173,10 @@
   </section>
 
   <footer>
-    <p>Με αγάπη, Konstantinos & Emmanouela ❤️</p>
+    <p>Με αγάπη, Konstantinos & Emmanouela</p>
   </footer>
 
   <script>
-    // Countdown μόνο σε μέρες
     const countdownElement = document.getElementById("countdown");
     const weddingDate = new Date("May 31, 2026 18:00:00").getTime();
 
@@ -179,8 +191,7 @@
       }
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-      countdownElement.innerHTML = `${days} μέρες 💚`;
+      countdownElement.innerHTML = `${days} μέρες ⏳`;
     }, 1000);
   </script>
 </body>
