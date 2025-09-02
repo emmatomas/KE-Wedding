@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ο Γάμος μας - Κωνσταντίνος & Εμμανουέλα</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background: #f9f5f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #d4b483;
+      padding: 2rem;
+      color: white;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    section {
+      padding: 2rem;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      font-weight: bold;
+      color: #8b5e3c;
+    }
+    .map {
+      margin-top: 1rem;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .rsvp-btn {
+      display: inline-block;
+      background: #8b5e3c;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      transition: background 0.3s;
+    }
+    .rsvp-btn:hover {
+      background: #5e3f29;
+    }
+    footer {
+      background: #d4b483;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ο Γάμος μας</h1>
+    <p>Κωνσταντίνος & Εμμανουέλα</p>
+    <p>Σάββατο, 15 Ιουνίου 2025</p>
+  </header>
+
+  <section>
+    <h2>Countdown</h2>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <section>
+    <h2>Τοποθεσία</h2>
+    <p>Η τελετή θα γίνει στην Εκκλησία Παναγίας, Κρήτη.</p>
+    <p>Η δεξίωση θα ακολουθήσει στο Κτήμα Μοναστήρι.</p>
+    <div class="map">
+      <!-- Βάλε εδώ το embed link από Google Maps -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!..." 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>Δήλωση Συμμετοχής</h2>
+    <p>Παρακαλούμε επιβεβαιώστε την παρουσία σας πατώντας παρακάτω:</p>
+    <a href="https://forms.gle/xxxxx" target="_blank" class="rsvp-btn">RSVP</a>
+  </section>
+
+  <footer>
+    <p>Με αγάπη, Κωνσταντίνος & Εμμανουέλα ❤️</p>
+  </footer>
+
+  <script>
+    // Countdown
+    const countdown = document.getElementById("countdown");
+    const weddingDate = new Date("June 15, 2025 18:00:00").getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdown.innerHTML = "Η μεγάλη μέρα έφτασε! 🎉";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days} μέρες, ${hours} ώρες, ${minutes} λεπτά, ${seconds} δευτ.`;
+    }, 1000);
+  </script>
+</body>
+</html>
