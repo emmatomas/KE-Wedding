@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Κωνσταντίνος & Εμμανουέλα</title>
+  <title>Konstantinos & Emmanouela Wedding</title>
   <style>
     body {
-      font-family: "Century Schoolbook", sans-serif;
+      font-family: "Century Schoolbook", serif;
       background: #f9f5f0;
-      color: #511;
+      color: #333;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -23,10 +23,14 @@
       font-size: 2.5rem;
     }
     h2 {
-      margin-top: 0;
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #8b5e3c;
     }
     section {
       padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
     .countdown {
       font-size: 1.5rem;
@@ -34,16 +38,13 @@
       font-weight: bold;
       color: #8b5e3c;
     }
-    .map {
-      margin-top: 1rem;
-    }
-    iframe {
+    .map iframe {
       width: 100%;
       max-width: 600px;
-      height: 400px;
+      height: 450px;
       border: none;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-top: 1rem;
     }
     .rsvp-btn {
       display: inline-block;
@@ -53,11 +54,22 @@
       border-radius: 25px;
       text-decoration: none;
       font-size: 1.2rem;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       transition: background 0.3s;
     }
     .rsvp-btn:hover {
       background: #5e3f29;
+    }
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 100px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+      font-family: "Century Schoolbook", serif;
+      font-size: 1rem;
     }
     footer {
       background: #d4b483;
@@ -69,48 +81,62 @@
 </head>
 <body>
   <header>
-    <h1>Κωνσταντίνος & Εμμανουέλα</h1>
-    <p>Save the date</p>
-    <p>Κυριακή, 31 Μαΐου 2026</p>
+    <h1>Konstantinos & Emmanouela Wedding</h1>
+    <p>Κυριακή 31 Μαΐου 2026</p>
+    <div id="countdown" class="countdown"></div>
   </header>
-
-  <section>
-    <h2>Countdown</h2>
-    <div class="countdown" id="countdown"></div>
-  </section>
 
   <section>
     <h2>Τοποθεσία</h2>
     <p>Η τελετή θα γίνει στην Εκκλησία Παναγίας, Ιεράπετρα Κρήτης</p>
     <p>Η δεξίωση θα ακολουθήσει στην Ταβέρνα Αγίας Παρασκευή, Χριστός</p>
     <div class="map">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.9568545632983!2d25.5736866750319!3d35.08281076261607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a814e5a4f263f%3A0x418b31a006f78916!2zzqTOsc6yzq3Pgc69zrEgzpHOs86vzrHPgiDOoM6xz4HOsc-DzrrOtc-Fzq7Pgg!5e0!3m2!1sel!2sgr!4v1756810724020!5m2!1sel!2sgr" 
-        width="600" 
-        height="450" 
-        style="border:0;" 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.9568545632983!2d25.5736866750319!3d35.08281076261607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a814e5a4f263f%3A0x418b31a006f78916!2zzqTOsc6yzq3Pgc69zrEgzpHOs86vzrHPgiDOoM6xz4HOsc-DzrrOtc-Fzq7Pgg!5e0!3m2!1sel!2sgr!4v1756810724020!5m2!1sel!2sgr" 
         allowfullscreen="" 
         loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-</section>
-
+  </section>
 
   <section>
     <h2>Δήλωση Συμμετοχής</h2>
     <p>Παρακαλούμε επιβεβαιώστε την παρουσία σας πατώντας παρακάτω:</p>
     <a href="https://forms.gle/xxxxx" target="_blank" class="rsvp-btn">RSVP</a>
+    <p style="margin-top:2rem;">Αφήστε μας και τα σχόλιά σας:</p>
+    <textarea placeholder="Γράψτε εδώ το μήνυμά σας..."></textarea>
+  </section>
+
+  <section>
+    <h2>Χρήσιμες Πληροφορίες για την Ιεράπετρα</h2>
+    <p>Η Ιεράπετρα είναι η νοτιότερη πόλη της Ευρώπης, γνωστή για το υπέροχο κλίμα της, τις παραλίες της και τη φιλοξενία των κατοίκων της.</p>
+    <p>Μπορείτε να απολαύσετε βόλτες στο παραλιακό μέτωπο, την παλιά πόλη και να δοκιμάσετε τοπικές γεύσεις στις παραδοσιακές ταβέρνες.</p>
+  </section>
+
+  <section>
+    <h2>Επιλογές Διαμονής</h2>
+    <p>🏨 Ξενοδοχεία στην Ιεράπετρα (π.χ. Astron Hotel, Petra Mare Hotel)</p>
+    <p>🏡 Airbnb επιλογές κοντά στην πόλη</p>
+  </section>
+
+  <section>
+    <h2>Επιλογές Αυτοκινήτου</h2>
+    <p>🚗 Ενοικίαση αυτοκινήτου από το Ηράκλειο ή Χανιά.</p>
+    <p>🚖 Υπηρεσίες ταξί και τοπικά γραφεία ενοικίασης στην Ιεράπετρα.</p>
+  </section>
+
+  <section>
+    <h2>Επικοινωνία</h2>
+    <p>📞 Για οποιαδήποτε πληροφορία καλέστε στο: <strong>69X XXX XXXX</strong></p>
   </section>
 
   <footer>
-    <p>Με αγάπη, Κωνσταντίνος & Εμμανουέλα ❤️</p>
+    <p>Με αγάπη, Konstantinos & Emmanouela ❤️</p>
   </footer>
 
   <script>
     // Countdown
-    const countdown = document.getElementById("countdown");
-    const weddingDate = new Date("June 15, 2025 18:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+    const weddingDate = new Date("May 31, 2026 18:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -118,7 +144,7 @@
 
       if (distance < 0) {
         clearInterval(interval);
-        countdown.innerHTML = "Η μεγάλη μέρα έφτασε! 🎉";
+        countdownElement.innerHTML = "Η μεγάλη μέρα έφτασε! 🎉";
         return;
       }
 
@@ -127,7 +153,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdown.innerHTML = `${days} μέρες, ${hours} ώρες, ${minutes} λεπτά, ${seconds} δευτ.`;
+      countdownElement.innerHTML = `${days} μέρες, ${hours} ώρες, ${minutes} λεπτά, ${seconds} δευτερόλεπτα`;
     }, 1000);
   </script>
 </body>
