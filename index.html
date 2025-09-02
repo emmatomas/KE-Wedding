@@ -1,54 +1,86 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Konstantinos & Emmanouela</title>
   <style>
     body {
       font-family: "Century Schoolbook", serif;
-      background: #f6f9f4;
+      background-color: #f6f9f4;
+      background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+      background-repeat: repeat;
       color: #333;
       margin: 0;
       padding: 0;
       text-align: center;
       position: relative;
     }
+
+    .olive-leaf {
+      position: fixed;
+      z-index: 0;
+      opacity: 0.07;
+    }
+
+    .leaf-top-right {
+      top: 20px;
+      right: 20px;
+      width: 150px;
+    }
+
+    .leaf-bottom-left {
+      bottom: 20px;
+      left: 20px;
+      width: 150px;
+      transform: rotate(180deg);
+    }
+
     header {
       background: #b5c99a;
       padding: 2rem;
       color: white;
       position: relative;
+      z-index: 1;
     }
+
     h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     h2 {
       margin-top: 2rem;
       font-size: 2rem;
       color: #718355;
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
+      position: relative;
+      z-index: 1;
     }
+
     .countdown {
       font-size: 1.5rem;
       margin: 1rem 0;
       font-weight: bold;
       color: #718355;
     }
+
     .location-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
     }
+
     .location-text {
       text-align: left;
     }
+
     .photo-placeholder {
       width: 100%;
       max-width: 600px;
@@ -62,6 +94,7 @@
       font-style: italic;
       padding: 1rem;
     }
+
     .map iframe {
       width: 100%;
       max-width: 350px;
@@ -69,6 +102,7 @@
       border: none;
       border-radius: 12px;
     }
+
     .rsvp-btn {
       display: inline-block;
       background: #718355;
@@ -80,45 +114,39 @@
       margin-top: 1rem;
       transition: background 0.3s;
     }
+
     .rsvp-btn:hover {
       background: #556b3b;
     }
-    textarea {
-      width: 100%;
-      max-width: 600px;
-      height: 100px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-top: 1rem;
-      font-family: "Century Schoolbook", serif;
-      font-size: 1rem;
-    }
+
     footer {
       background: #b5c99a;
       color: white;
       padding: 1rem;
       margin-top: 2rem;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
+  <!-- 🌿 Φύλλα ελιάς στο background -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Olive_branch_icon_transparent.png" alt="olive leaf" class="olive-leaf leaf-top-right" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Olive_branch_icon_transparent.png" alt="olive leaf" class="olive-leaf leaf-bottom-left" />
+
   <header>
     <h1>Konstantinos & Emmanouela</h1>
     <p>Save the date</p>
     <p>Κυριακή 31 Μαΐου 2026</p>
     <div id="countdown" class="countdown"></div>
+  </header>
 
-  <!-- 📸 Ενότητα με Φωτογραφία Ζευγαριού -->
   <section>
     <div class="photo-placeholder">
       [Φωτογραφία του ζευγαριού εδώ]
-      <!-- Ή αν έχεις τελική φωτογραφία:
-      <img src="your-photo.jpg" alt="Το ζευγάρι" style="width:100%; border-radius:12px;"> -->
     </div>
   </section>
 
-  <!-- 📍 Τοποθεσία -->
   <section>
     <h2>Τοποθεσία</h2>
     <div class="location-container">
@@ -136,61 +164,50 @@
     </div>
   </section>
 
-  <!-- RSVP -->
   <section>
     <h2>RSVP</h2>
     <p>Μην μας κρατάς σε αγωνία - επιβεβαίωσε την παρουσία σου πατώντας παρακάτω:</p>
     <a href="https://forms.gle/xxxxx" target="_blank" class="rsvp-btn">RSVP</a>
   </section>
 
-  <!-- Πληροφορίες -->
   <section>
     <h2>Χρήσιμες Πληροφορίες για την Ιεράπετρα</h2>
     <p>Η Ιεράπετρα είναι η νοτιότερη πόλη της Ευρώπης, γνωστή για τις όμορφες παραλίες της και το ποιοτικό φαγητό της.</p>
     <p>Μπορείτε να απολαύσετε βόλτες στο παραλιακό μέτωπο, την παλιά πόλη και να δοκιμάσετε τοπικές γεύσεις στις παραδοσιακές ταβέρνες.</p>
-    <p>
   </section>
 
-  <!-- Διαμονή -->
   <section>
     <h2>Επιλογές Διαμονής</h2>
     <p>🏨 Ξενοδοχεία στην Ιεράπετρα (π.χ. Astron Hotel, Petra Mare Hotel)</p>
     <p>🏡 Airbnb επιλογές κοντά στην πόλη</p>
   </section>
 
-  <!-- Αυτοκίνητο -->
   <section>
     <h2>Επιλογές Αυτοκινήτου</h2>
     <p>🚗 Ενοικίαση αυτοκινήτου από το Ηράκλειο ή Χανιά.</p>
     <p>🚖 Υπηρεσίες ταξί και τοπικά γραφεία ενοικίασης στην Ιεράπετρα.</p>
   </section>
 
-  <!-- Επικοινωνία -->
   <section>
     <h2>Επικοινωνία</h2>
     <p>📞 Για οποιαδήποτε πληροφορία καλέστε στο: <strong>69X XXX XXXX</strong></p>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>Με αγάπη, Konstantinos & Emmanouela</p>
   </footer>
 
-  <!-- Countdown -->
   <script>
     const countdownElement = document.getElementById("countdown");
     const weddingDate = new Date("May 31, 2026 18:00:00").getTime();
-
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = weddingDate - now;
-
       if (distance < 0) {
         clearInterval(interval);
         countdownElement.innerHTML = "Η μεγάλη μέρα έφτασε! 🎉";
         return;
       }
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       countdownElement.innerHTML = `${days} μέρες ⏳`;
     }, 1000);
